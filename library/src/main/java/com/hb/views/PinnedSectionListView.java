@@ -368,7 +368,10 @@ public class PinnedSectionListView extends ListView {
 		if (adapter != null) adapter.registerDataSetObserver(mDataSetObserver);
 
 		// destroy pinned shadow, if new adapter is not same as old one
-		if (oldAdapter != adapter) destroyPinnedShadow();
+		if (oldAdapter != adapter) {
+            destroyPinnedShadow();
+            mRecycleSection = null;
+        }
 
 		super.setAdapter(adapter);
 	}
