@@ -192,7 +192,7 @@ public class PinnedSectionListView extends ListView {
 		mRecycleSection = null;
 
 		// create new shadow, if needed
-		if (pinnedShadow == null) pinnedShadow = new PinnedSection();
+		if (pinnedShadow == null || position != pinnedShadow.position) pinnedShadow = new PinnedSection();
 		// request new view using recycled view, if such
 		View pinnedView = getAdapter().getView(position, pinnedShadow.view, PinnedSectionListView.this);
 
