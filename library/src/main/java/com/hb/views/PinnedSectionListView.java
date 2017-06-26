@@ -320,6 +320,7 @@ public class PinnedSectionListView extends ListView {
 	}
 
 	void recreatePinnedShadow() {
+	    mRecycleSection = null;
 	    destroyPinnedShadow();
         ListAdapter adapter = getAdapter();
         if (adapter != null && adapter.getCount() > 0) {
